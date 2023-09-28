@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shopee</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+      font-family: roboto , "Helvetica Neue", Helvetica, Arial ;
+    }
+
+    body {
+      min-height: 300vh;
+    }
+
+    section.top {
+      position: sticky;
+      top: 0px;
+    }
+
+    nav.one {
+      height:34px ;
+      background-color: rgba(245,62,45,255);
+      
+    } 
+
+    section.left {
+      float: left;
+      margin-left: 30px;
+    }
+
+    section.left > a {
+      padding: 4px;
+      text-decoration: none;
+      display: inline;
+      color: #fff;
+      font-size: .8125rem;
+      font-weight: 10px;
+      
+    }
+
+    section.left > h3 {
+      line-height: 34px;
+      display: inline;
+      color: rgba(248,107,91,255);
+      font-size: 15px;
+    }
+
+    section.right {
+      margin-right: 30px;
+      float: right;
+    }
+
+    section.right > a {
+      display: inline;
+      padding: 5px;
+      color: #fff;
+      font-size: .8125rem;
+      font-weight: 10px;
+      line-height: 34px;
+      text-decoration: none;
+    }
+
+    section.right > h3 {
+      line-height: 34px;
+      display: inline;
+      color: rgba(248,107,91,255);
+      font-size: 15px;
+    }
+
+    section.searchbar {
+      background-image: linear-gradient(rgba(245,62,45,255), rgba(255,101,51,255));
+    }
+
+    .logo{grid-area: logo;}
+    .bar{grid-area: bar;}
+    .cart{grid-area: cart;}
+
+    nav.two {
+      display: grid;
+      grid-template-areas: 'logo bar cart';
+      height: 85px;
+      padding: 16px;
+    }
+
+    nav.two > div.logo {
+      width: 202px;
+      height: 50px;
+      height: inherit;
+      margin-right: 37px;
+    }
+
+    nav.two > div.logo > img {
+      width: 150px;
+      height: 50px;
+      margin-left: 14px;
+    }
+
+    nav.two > div.search {
+      width: 825px;
+      height: 85px;
+    }
+
+    input.bar {grid-area: input;}
+    input.button {grid-area: button;}
+
+    nav.two > div.search > div.bar {
+      display: grid;
+      grid-template-areas: 'input button';
+      background-color: #fff;
+      width: 825px;
+      height: 40px;
+    }
+
+    nav.two > div.search > div.bar > input.bar {
+      border: none;
+      width: 750px;
+      height: 34px;
+      margin-left: 10px;
+      margin-top: 3px;
+    }
+
+    nav.two > div.search > div.bar > input.button {
+      background-color:rgba(255,101,51,255) ;
+      border: none;
+      width: 60px;
+      height: 34px;
+      margin-top: 3px;
+    }
+
+    nav.two > div.search > div.other {
+      margin-top: 5px;
+    }
+
+    nav.two > div.search > div.other > p {
+      display: inline;
+      color: #fff;
+      font-size: small;
+      margin-right: 13px;
+    }
+
+    div.cart > img{
+      margin-left: 60px;
+      margin-top: 20px;
+      height: 25px;
+    }
+
+    .onep {grid-area: onep;}
+    .twop {grid-area: twop;}
+    .threep {grid-area: threep;}
+
+    section.picture {
+      display: grid;
+      grid-template-areas: 
+      'onep twop'
+      'onep threep';
+      gap: 5px;
+      margin: 30px;
+    }
+
+    div.onep {
+      width: 797px;
+      height: 235px;
+      background-image: url(id-50009109-0524d03f88938db30cdf1b2c58b90506_xxhdpi.png);
+    }
+
+    div.twop {
+      width: 400px;
+      height: 115px;
+      background-image: url(id-50009109-70dc073d3f4a0e4fd8006fba613d19c9_xhdpi.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    div.threep {
+      width: 400px;
+      height: 115px;
+      background-image: url(id-50009109-95c129e61d690489c9ededaff05aa90e_xhdpi.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    div.q {
+      width: 1200px;
+      height: 81px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    div.q > div {
+      width: 100px;
+      height: 81px;
+    }
+
+    div.q img {
+      margin-left: 25px;
+      height: 45px;
+      width: 45px;
+    }
+    
+    div.q p {
+      font-size: 13px;
+      text-align: center;
+    }
+
+    section.category {
+      display: flex;
+      background-color: #f5f5f5;
+;
+      height: 360px;
+    }
+
+    section.category > div.kategori {
+      width: 1200px;
+      height: 300px;
+      margin: auto;
+      background-color: #fff;
+    }
+
+    section.category > div.kategori > div.header {
+      width: 1200px;
+      height: 60px;
+      margin-left: 20px;
+    }
+
+    section.category > div.kategori > div.header > h2 {
+      color: rgba(0,0,0,.54);
+      font-size: 16px;
+      line-height: 60px;
+    }
+
+    section.category > div.kategori > div.container {
+      display: flex;
+    }
+
+    section.category > div.kategori > div.container > div {
+      border: 0.01px solid gray;
+      width: 120px;
+      height: 120px;
+    }
+
+    section.category > div.kategori > div.container > div > img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 84px;
+      height: 88px;
+    }
+
+    section.category > div.kategori > div.container > div > p {
+      text-align: center;
+      text-transform: capitalize;
+      font-size: 13px;
+    }
+
+
+    
+  </style>
+</head>
+<body>
+  <section class="top">
+    <nav class="one">
+      <section class="left">
+        <a href="#">Seller Shopee</a>
+        <h3>|</h3>
+        <a href="#">Mulai Berjualan</a>
+        <h3>|</h3>
+        <a href="#">Download</a>
+        <h3>|</h3>
+        <a href="#">Ikuti kami di</a>
+        <a class="_7hjmJk header-navbar-background header-navbar-facebook-png" href="https://facebook.com/ShopeeID" target="_blank" rel="noopener noreferrer" title="Ikuti kami di Facebook">f</a>
+        <a href="https://instagram.com/Shopee_ID" target="_blank" rel="noopener noreferrer" class="AGWVl+ header-navbar-background header-navbar-instagram-png" title="Ikuti kami di Instagram!">🎞</a>
+        <a href="https://instagram.com/kampusshopee.id" target="_blank" rel="noopener noreferrer" class="RJXDtN header-navbar-background header-navbar-shopee-campus-header-png" title="Ikuti kami di Kampus Shopee">🕶</a>
+      </section>
+      <section class="right">
+        <a>🔔Notifikasi</a>
+        <a>? Bantuan</a>
+        <a style="padding: 7px 10px;
+        ">🌐 Bahasa Indonesia ↓</a>
+        <a href="#" style="font-weight: bold;">Daftar</a>
+        <h3>|</h3>
+        <a href="#" style="font-weight: bold;">Login</a>
+      </section>
+    </nav>
+    <section class="searchbar">
+      <nav class="two">
+        <div class="logo">
+          <img src="1656181621shopee-logo-white.png" alt="">
+        </div>
+        <div class="search">
+          <div class="bar">
+            <input type="text" class="bar" name="" id="" placeholder="Daftar & Dapat Voucher Gratis">
+            <input type="button" class="button" value="🔍">
+          </div>
+          <div class="other">
+            <p>sendal</p>
+            <p>one set wanita</p>
+            <p>case HP</p>
+            <p>celana</p>
+            <p>HP murah cuci gudang</p>
+            <p>Hoodie pria</p>
+            <p>Garnis crinkle</p>
+            <p>iphone 14 Pro Max</p>
+            <p>Kaos</p>
+          </div>
+        </div>
+        <div class="cart">
+          <img src="Screenshot (6).png" alt="">
+        </div>
+      </nav>
+    </section>
+  </section>
+  <section class="picture">
+    <div class="onep"></div>
+    <div class="twop"></div>
+    <div class="threep"></div>
+  </section>
+  <div class="q">
+    <div class="one">
+      <img src="Screenshot (7).png" alt="">
+      <p>Shopee Pilih Lokal</p>
+    </div>
+    <div class="two">
+      <img src="Screenshot (8).png" alt="">
+      <p>Serba Seribu</p>
+    </div>
+    <div class="three">
+      <img src="Screenshot (9).png" alt="">
+      <p>Pulsa, Tagihan, dan Tiket</p>
+    </div>
+    <div class="four">
+      <img src="Screenshot (10).png" alt="">
+      <p>inFashion</p>
+    </div>
+    <div class="five">
+      <img src="Screenshot (11).png" alt="">
+      <p>Shopee Supermarket</p>
+    </div>
+    <div class="six">
+      <img src="Screenshot (12).png" alt="">
+      <p>Bayar Di Tempat</p>
+    </div>
+    <div class="seven">
+      <img src="Screenshot (13).png" alt="">
+      <p>Murah Lebay</p>
+    </div>
+    <div class="eight">
+      <img src="Screenshot (14).png" alt="">
+      <p>Gratis Ongkir dan Voucher</p>
+    </div>
+    <div class="nine">
+      <img src="Screenshot (15).png" alt="">
+      <p>Shopee Barokah</p>
+    </div>
+    <div class="ten">
+      <img src="Screenshot (16).png" alt="">
+      <p>Semua Promo</p>
+    </div>
+  </div>
+  <section class="category">
+    <div class="kategori">
+      <div class="header">
+        <h2>KATEGORI</h2>
+      </div>
+      <div class="container one">
+        <div class="1">
+          <img src="Screenshot (9)2.png" alt="">
+          <p>Elektronik</p>
+        </div>
+        <div class="2">
+          <img src="Screenshot (11)2.png" alt="">
+          <p>Komputer & aksesoris</p>
+        </div>
+        <div class="3">
+          <img src="Screenshot (12)2.png" alt="">
+          <p>handphone & aksesoris</p>
+        </div>
+        <div class="4">
+          <img src="Screenshot (13)2.png" alt="">
+          <p>pakaian pria</p>
+        </div>
+        <div class="5">
+          <img src="Screenshot (14)2.png" alt="">
+          <p>sepatu pria</p>
+        </div>
+        <div class="6">
+          <img src="Screenshot (15)2.png" alt="">
+          <p>tas pria</p>
+        </div>
+        <div class="7">
+          <img src="Screenshot (16)2.png" alt="">
+          <p>aksesoris fashion</p>
+        </div>
+        <div class="8">
+          <img src="Screenshot (17).png" alt="">
+          <p>jam tangan</p>
+        </div>
+        <div class="9">
+          <img src="Screenshot (18).png" alt="">
+          <p>kesehatan</p>
+        </div>
+        <div class="10">
+          <img src="Screenshot (19).png" alt="">
+          <p>hobi & koleksi</p>
+        </div>
+      </div>
+      <div class="container two">
+        <div class="11">
+          <img src="Screenshot (11)3.png" alt="">
+          <p>makanan & minuman</p>
+        </div>
+        <div class="12">
+          <img src="Screenshot (12)3.png" alt="">
+          <p>perawatan & kecantikan</p>
+        </div>
+        <div class="13">
+          <img src="Screenshot (13)3.png" alt="">
+          <p>perlengkapan rumah</p>
+        </div>
+        <div class="14">
+          <img src="Screenshot (14)3.png" alt="">
+          <p>pakaian wanita</p>
+        </div>
+        <div class="15">
+          <img src="Screenshot (15)3.png" alt="">
+          <p>fashion muslim</p>
+        </div>
+        <div class="16">
+          <img src="Screenshot (16)3.png" alt="">
+          <p>fashion bayi & anak</p>
+        </div>
+        <div class="17">
+          <img src="Screenshot (17)3.png" alt="">
+          <p>ibu & bayi</p>
+        </div>
+        <div class="18">
+          <img src="Screenshot (18)3.png" alt="">
+          <p>sepatu wanita</p>
+        </div>
+        <div class="19">
+          <img src="Screenshot (19)3.png" alt="">
+          <p>tas wanita</p>
+        </div>
+        <div class="20">
+          <img src="Screenshot (20)3.png" alt="">
+          <p>otomoif</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
